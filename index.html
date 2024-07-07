@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Documentation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="aside">
+      <nav id="navbar">
+        <header class="navbar-header">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png"
+            alt="Logo TypeScript"
+            class="navbar-header-img"
+          />
+          <h1 class="navbar-title">Typescript <br />Documentation</h1>
+        </header>
+        <div class="container-nav-labels">
+          <details class="nav-label">
+            <summary>
+              <a href="#Introduction" class="nav-link">Introduction</a>
+            </summary>
+
+            <ul class="nav-label-list">
+              <li><a href="#What_is_TypeScript">What is TypeScript?</a></li>
+
+              <li><a href="#Benefits_of_Types">Benefits of Types</a></li>
+            </ul>
+          </details>
+
+          <details class="nav-label">
+            <summary>
+              <a href="#Getting_Started_with_TypeScript" class="nav-link"
+                >Getting Started with TypeScript</a
+              >
+            </summary>
+
+            <ul class="nav-label-list">
+              <li><a href="#Installation">Installation</a></li>
+
+              <li>
+                <a href="#Creating_a_TypeScript_Project"
+                  >Creating a TypeScript Project</a
+                >
+              </li>
+
+              <li>
+                <a href="#Creating_a_Simple_TypeScript_File"
+                  >Creating a Simple TypeScript File</a
+                >
+              </li>
+
+              <li>
+                <a href="#Compiling_TypeScript_to_JavaScript"
+                  >Compiling TypeScript to JavaScript</a
+                >
+              </li>
+            </ul>
+          </details>
+
+          <details class="nav-label">
+            <summary>
+              <a href="#Basic_TypeScript_Syntax" class="nav-link"
+                >Basic TypeScript Syntax</a
+              >
+            </summary>
+
+            <ul class="nav-label-list">
+              <li><a href="#Type_declarations">Type declarations</a></li>
+
+              <li><a href="#Type_annotations">Type annotations</a></li>
+
+              <li><a href="#Interfaces">Interfaces</a></li>
+            </ul>
+          </details>
+
+          <details class="nav-label">
+            <summary>
+              <a href="#Main_Features_of_TypeScript" class="nav-link"
+                >Main Features of TypeScript</a
+              >
+            </summary>
+
+            <ul class="nav-label-list">
+              <li><a href="#Static_Types">Static Types</a></li>
+
+              <li><a href="#Generics">Generics</a></li>
+
+              <li><a href="#Mixins">Mixins</a></li>
+
+              <li><a href="#Decorators">Decorators</a></li>
+            </ul>
+          </details>
+
+          <details class="nav-label">
+            <summary>
+              <a href="#More_Documentation" class="nav-link"
+                >More Documentation</a
+              >
+            </summary>
+            <ul class="nav-label-list">
+              <li>
+                <a href="#Official_Documentation">Official Documentation</a>
+              </li>
+
+              <li><a href="#Other_Communities">Other Communities</a></li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+    </aside>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header class="section-header">
+          <h2 class="section-header-title">Introduction</h2>
+        </header>
+        <article class="section-article" id="What_is_TypeScript">
+          <h3>What is TypeScript?</h3>
+          <p>
+            TypeScript is a superset programming language of JavaScript that
+            adds syntax for static types.
+          </p>
+          <p>
+            This means that TypeScript allows you to define the data types that
+            can be used in your variables, functions, and other parts of the
+            code.
+          </p>
+          <p>
+            This can improve the reliability and maintainability of your code,
+            as the TypeScript compiler can detect type errors at compile time,
+            before your code is executed.
+          </p>
+        </article>
+        <article class="section-article" id="Benefits_of_Types">
+          <h3>Benefits of Types</h3>
+          <ul>
+            <li>
+              <b>Greater reliability:</b> TypeScript detects type errors at
+              compile time, which can help you avoid errors that could cause
+              your code to behave unexpectedly.
+            </li>
+            <li>
+              <b>Better maintainability:</b> TypeScript can make your code
+              easier to read and understand, as data types are explicitly
+              defined.
+            </li>
+            <li>
+              <b>Increased productivity:</b> TypeScript can help you write code
+              faster and more efficiently, as the compiler can help you identify
+              and fix errors before your code is executed.
+            </li>
+            <li>
+              <b>Scales better:</b> TypeScript is a good choice for large-scale
+              projects, as it can help you mantain code quality as the project
+              grows.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Getting_Started_with_TypeScript">
+        <header class="section-header">
+          <h2 class="section-header-title">Getting Started with TypeScript</h2>
+        </header>
+        <p>
+          TypeScript offers a smooth transition from JavaScript by adding static
+          typing features on top of the familiar JavaScript syntax. Here's a
+          guide to get you started with TypeScript.
+        </p>
+        <article class="section-article" id="Installation">
+          <h3>Installation</h3>
+          <p>There are two main ways to install TypeScript</p>
+          <ol>
+            <li>
+              <b>Globally:</b>
+              <p>
+                If you plan to work on multiple TypeScript projects or want to
+                use the <code>tsc</code> compiler from anywhere on your system,
+                you can install it globally using npm:
+              </p>
+              <code>npm install -g typescript</code>
+            </li>
+            <li>
+              <b>Locally:</b>
+              <p>
+                If you're working on a specific TypeScript project, it's
+                recommended to install TypeScript locally as a development
+                dependency. This keeps your project's dependencies
+                self-contained and avoids potential conflicts with globally
+                installed versions.
+              </p>
+              <code>npm install typescript --save-dev</code>
+              <p>
+                This will install TypeScript as a development dependency in your
+                project's <code>package.json</code> file.
+              </p>
+            </li>
+          </ol>
+        </article>
+        <article class="section-article" id="Creating_a_TypeScript_Project">
+          <h3>Creating a TypeScript Project</h3>
+          <p>Here are two approaches to creating a TypeScript project:</p>
+          <ol>
+            <li>
+              <b>Using a code editor with built-in TypeScript support:</b>
+              <p>
+                Many popular code editors like Visual Studio Code, WebStorm, and
+                Sublime Text offer built-in TypeScript support. These editors
+                provide features like syntax highlighting, type checking, and
+                autocompletion, making development smoother.
+              </p>
+              <p>
+                You can usually create a new TypeScript project within these
+                editors by selecting a "TypeScript Project" template or
+                configuring your editor's settings to recognize TypeScript
+                files.
+              </p>
+            </li>
+            <li>
+              <b>Manual Setup:</b>
+              <p>
+                If you prefer a more manual approach, you can create a basic
+                project structure:
+              </p>
+              <pre>
+                <code>
+my-typescript-project/
+    src/
+        main.ts
+    tsconfig.json
+                </code>
+              </pre>
+              <ul>
+                <li>
+                  <code>src/</code>: This folder will contain your TypeScript
+                  source code files (e.g., <code>main.ts</code>).
+                </li>
+                <li>
+                  <code>tsconfig.json</code>: This file is the TypeScript
+                  configuration file. It defines compiler options and setting
+                  for your project.
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+        <article class="section-article" id="Creating_a_Simple_TypeScript_File">
+          <h3>Creating a Simple TypeScript File</h3>
+          <p>
+            Open your preferred code editor and create a file named
+            <code>main.ts</code> inside the <code>src</code> folder. Here's a
+            simple example.
+          </p>
+          <pre>
+            <code>
+let message: string = "Hello world";
+console.log(message);
+            </code>
+          </pre>
+          <p>
+            This code defines a variable <code>message</code> with the type
+            <code>string</code> and assigns the value "Hello, world!".
+          </p>
+        </article>
+        <article
+          class="section-article"
+          id="Compiling_TypeScript_to_JavaScript"
+        >
+          <h3>Compiling TypeScript to JavaScript</h3>
+          <p>
+            To run this TypeScript code, you need to compile it to plain
+            JavaScript. You can use the <code>tsc</code> compiler:
+          </p>
+          <ol>
+            <li>
+              Open a terminal or command prompt and navigate to your project
+              directory.
+            </li>
+            <li>
+              Run the following command:
+              <code><br />tsc</code>
+              <p>
+                This will compile all the <code>.ts</code> files in your
+                <code>src</code> directory (or the configured source directory)
+                and generate the corresponding JavaScript files in the output
+                directory (usually the <code>dist</code> directory by default).
+              </p>
+            </li>
+            <li>
+              Once compiled, you can run the generated JavaScript file (e.g.,
+              <code>main.js</code>) using Node.js:
+              <code><br />node dist/main.js</code>
+              <p>This will print the message "Hello World"</p>
+            </li>
+          </ol>
+        </article>
+      </section>
+      <section class="main-section" id="Basic_TypeScript_Syntax">
+        <header class="section-header">
+          <h2 class="section-header-title">Basic TypeScript Syntax</h2>
+        </header>
+        <p>
+          The syntax of TypeScript is very similar to that of JavaScript. The
+          main differences are:
+        </p>
+        <article class="section-article" id="Type_declarations">
+          <h3>Type declarations</h3>
+          <p>
+            You can define the data types of variables, functions, and other
+            elements of the code using type declarations. For example, you can
+            declare a variable that stores a number as follows:
+          </p>
+          <code>let age: number = 30;</code>
+        </article>
+        <article class="section-article" id="Type_annotations">
+          <h3>Type annotations</h3>
+          <p>
+            You can add type annotations to your functions to specify the data
+            types of the parameters and the return value. For example, you can
+            define a function that adds two numbers as follows:
+          </p>
+          <pre>
+            <code>
+function add(x: number, y: number): number { 
+  return x + y; 
+}
+            </code>
+          </pre>
+        </article>
+        <article class="section-article" id="Interfaces">
+          <h3>Interfaces</h3>
+          <p>
+            You can define interfaces to specify the structure of objects. For
+            example, you can define an interface to represent a person as
+            follows:
+          </p>
+          <pre>
+            <code>
+interface Person {
+  name: string;
+  age: number;
+  occupation: string;
+}
+            </code>
+          </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Main_Features_of_TypeScript">
+        <header class="section-header">
+          <h2 class="section-header-title">Main Features of TypeScript</h2>
+        </header>
+        <p>
+          TypeScript has a number of features that make it a powerful and
+          versatile programming language. Some of the most important features
+          include:
+        </p>
+        <article class="section-article" id="Static_Types">
+          <h3>Static Types</h3>
+          <p>
+            Unlike JavaScript, TypeScript requires you to explicitly define the
+            data types (like number, string, boolean) of variables, function
+            arguments, and return values. This allows the compiler to identify
+            potential type mismatches before your code even runs.
+          </p>
+          <h4>Example</h4>
+          <pre>
+            <code>
+let age: number = 30; //Explicitly define age as a number
+
+function add(x: number, y: number):number { //Define types for arguments and return value
+  return x + y;
+}
+            </code>
+          </pre>
+          <p>
+            This is useful to cath type errors during compilation, preveinting
+            runtime crashes and unexpected behavior. Also, this feature improve
+            code readability, making easier to understand to developers.
+          </p>
+        </article>
+        <article class="section-article" id="Generics">
+          <h3>Generics</h3>
+          <p>
+            Generics allow you to write code that can work with different data
+            types without sacrificing type safety. You define placeholders for
+            types using type parameters, making the code adaptable to various
+            scenarios.
+          </p>
+          <h4>Example</h4>
+          <pre>
+            <code>
+function identity&lt;T&gt;(value: T) {
+  return value; //Works with any type T (number, string, etc.)
+}
+
+const num = identity(10);
+const str = identity("Hello");
+            </code>
+          </pre>
+          <p>
+            Writing generic functions and classes that can handle different data
+            types reduces duplication. This allows the code to be reusable
+            without leaving type safety behind. The compiler ensures that the
+            data used within the generic code adheres to the specified type
+            constraints.
+          </p>
+        </article>
+        <article class="section-article" id="Mixins">
+          <h3>Mixins</h3>
+          <p>
+            Mixins are a way to add functionality to classes without directly
+            creating a subclass inheritance hierarchy. You define a mixin class
+            containing reusable methods and properties. Other classes can then
+            "mix in" this functionality by referencing the mixin class.
+          </p>
+          <h4>Example</h4>
+          <pre>
+            <code>
+class Logger {
+  log(message: string): void {
+    console.log(message);
+  }
+}
+
+class Person {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+class PersonWithLogger extends Person {
+  constructor(name: string) {
+    super(name);
+  }
+  //Instead of inheriting from Logger, we can mix it in
+  private logger = new Logger();
+
+  greet(message: string): void {
+    this.logger.log(`[${this.name}]: ${message}`);
+  }
+}
+
+const person = new PersonWithLogger('John Doe');
+person.greet('Hello, world!'); // Output: [John Doe]: Hello, world!
+            </code>
+          </pre>
+          <p>
+            This promote to the projects more code organization and reusability,
+            reducing redundancy. Classes can incorporate functionality from
+            multiple mixins, achieving more flexible composition of behavior.
+          </p>
+        </article>
+        <article class="section-article" id="Decorators">
+          <h3>Decorators</h3>
+          <p>
+            Decorators are a powerful feature that allows you to modify the
+            behavior of classes, functions, and other parts of your code at
+            runtime. They are essentially functions that take a class, function,
+            or property as an argument and can return a modified version of it.
+          </p>
+          <pre>
+            <code>
+function logger(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value;
+
+  descriptor.value = function (...args: any[]) {
+    console.log(`Calling ${propertyKey} with args: ${args}`);
+    const result = originalMethod.apply(this, args);
+    console.log(`Result of ${propertyKey}: ${result}`);
+    return result;
+  };
+}
+
+class Person {
+  @logger
+  greet(name: string): string {
+    return `Hello, ${name}!`;
+  }
+}
+
+const person = new Person();
+person.greet('John Doe'); 
+// Output: Calling greet with args: ['John Doe']
+// Output: Result of greet: Hello, John Doe!
+            </code>
+          </pre>
+          <p>
+            This allows writing code that modifies other code (metaprogramming),
+            enabling functionality such as dependency injection, logging and
+            performance optimization. By keeping core functionality separate
+            from decorators, code readability and separation of concerns is
+            improved.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="More_Documentation">
+        <header class="section-header">
+          <h2 class="section-header-title">More Documentation</h2>
+        </header>
+        <p>
+          In this section, you'll find helpful resources for learning more about
+          TypeScript:
+        </p>
+        <article class="section-article" id="Official_Documentation">
+          <h3>Official Documentation</h3>
+          <ul>
+            <li>
+              <a href="https://www.typescriptlang.org/docs/"
+                >Official TypeScript Documentation</a
+              >
+            </li>
+            <li>
+              <a href="https://www.typescriptlang.org/docs/handbook/intro.html"
+                >TypeScript Handbook</a
+              >
+            </li>
+            <li>
+              <a href="https://www.typescriptlang.org/docs/"
+                >TypeScript 2.x Features</a
+              >
+            </li>
+          </ul>
+        </article>
+        <article class="section-article" id="Other_Communities">
+          <h3>Other Communities</h3>
+          <ul>
+            <li>
+              <a href="https://www.reddit.com/r/typescript/"
+                >TypeScript Reddit Community</a
+              >
+            </li>
+            <li>
+              <a href="https://stackoverflow.com/questions/tagged/typescript"
+                >TypeScript on Stack Overflow</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
